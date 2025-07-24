@@ -11,7 +11,7 @@ import { Message } from '../types';
 
 const API_CONFIG = {
   // API URL - Set via environment variable
-  baseUrl: 'http://51.38.121.198:44139',
+  baseUrl: 'http://114.32.64.6:41063',
   
   // API Endpoints
   endpoints: {
