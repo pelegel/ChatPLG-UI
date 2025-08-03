@@ -12,7 +12,7 @@ A simple Hebrew chatbot with real-time AI responses, powered by a reusable LLM A
 python3 -m vllm.entrypoints.openai.api_server \
   --model gaunernst/gemma-3-12b-it-qat-autoawq \
   --max-model-len 131072 \
-  --port 8000 \
+  --port 8060 \
   --tensor-parallel-size 2
 ```
 
@@ -55,7 +55,7 @@ ChatPLG-UI/
 ### LLM API Configuration
 Create `llm-api/.env` for custom settings:
 ```bash
-LLM_API_vllm_api_url=http://localhost:8000/v1/chat/completions
+LLM_API_vllm_api_url=http://localhost:8060/v1/chat/completions
 LLM_API_MODEL_NAME=gaunernst/gemma-3-12b-it-qat-autoawq
 LLM_API_PORT=8090
 LLM_API_LOG_LEVEL=INFO
@@ -112,7 +112,7 @@ const extractTasks = async (text) => {
 | Issue | Solution |
 |-------|----------|
 | API connection refused | Start API: `cd llm-api && ./start-unified-api.sh` |
-| vLLM not responding | Start vLLM server on port 8000 |
+| vLLM not responding | Start vLLM server on port 8060 |
 | Port conflicts | Check `lsof -i :3000` and `lsof -i :8090` |
 
 ### Quick Health Check

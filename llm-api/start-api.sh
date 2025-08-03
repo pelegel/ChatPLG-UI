@@ -60,13 +60,13 @@ start_vllm() {
     python3 -m vllm.entrypoints.openai.api_server \
         --model $LLM_API_MODEL_NAME \
         --max-model-len 131072 \
-        --port 8000 \
+        --port 8060 \
         --tensor-parallel-size 2 | grep -Ev "Received request chatcmpl|Added request chatcmpl|HTTP/1.1\" 200 OK" &
     
     # Wait for vLLM to start
     echo -e "${YELLOW}Waiting for vLLM server to start...${NC}"
     for i in {1..600}; do
-        if curl -s http://localhost:8000/v1/models > /dev/null; then
+        if curl -s http://localhost:8060/v1/models > /dev/null; then
             echo -e "${GREEN}vLLM server is ready!${NC}"
             return 0
         fi

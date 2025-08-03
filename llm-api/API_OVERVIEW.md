@@ -163,7 +163,7 @@ response = await client.post(
 ### **Environment Variables**
 ```bash
 # vLLM Configuration
-LLM_API_VLLM_API_URL=http://localhost:8000/v1/chat/completions
+LLM_API_VLLM_API_URL=http://localhost:8060/v1/chat/completions
 LLM_API_MODEL_NAME=gaunernst/gemma-3-12b-it-qat-autoawq
 
 # Server Configuration  
